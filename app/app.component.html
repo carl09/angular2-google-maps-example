@@ -1,2 +1,12 @@
 <h1>My first angular-google-maps app!</h1>
-<sebm-google-map [latitude]="lat" [longitude]="lng"></sebm-google-map>
+<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="maptype" [mapTypeControlOptions]="mapTypeControlOptions">
+    <sebm-google-image-map-type [mapLayerId]="'linz'" [options]=imageMapOptions></sebm-google-image-map-type>
+</sebm-google-map>
+
+<div>
+    <button (click)=setMapHybrid() [disabled]="maptype === 'hybrid'" >Hybrid</button>
+    <button (click)=setMapRoadmap() [disabled]="maptype === 'roadmap'">Roadmap</button>
+    <button (click)=setMapSatellite() [disabled]="maptype === 'satellite'">Satellite</button>
+    <button (click)=setMapTerrain() [disabled]="maptype === 'terrain'">Terrain</button>
+    <button (click)=setMapMoon() [disabled]="maptype === 'linz'">linz</button>
+</div>
